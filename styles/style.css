@@ -1,18 +1,10 @@
-/* IMPORTAR TIPOGRAFIA */
-
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
-
-
-/* RESET */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
-
-/* BODY */
 
 body{
 
@@ -26,10 +18,6 @@ padding-left:90px;
 padding-right:90px;
 
 }
-
-
-
-/* HEADER */
 
 header{
 
@@ -61,12 +49,7 @@ color:#b5bcc6;
 font-size:18px;
 
 }
-
-
-
-/* BUSCADOR */
-
-.search{
+ .search{
 
 display:flex;
 
@@ -122,10 +105,6 @@ background:#f5c84c;
 
 }
 
-
-
-/* BOTONES MENU */
-
 .menu{
 
 display:flex;
@@ -168,10 +147,6 @@ color:black;
 
 }
 
-
-
-/* GRID RESULTADOS */
-
 .results{
 
 display:grid;
@@ -183,10 +158,6 @@ gap:35px;
 margin-bottom:60px;
 
 }
-
-
-
-/* TARJETAS */
 
 .card{
 
@@ -208,10 +179,6 @@ transform:scale(1.05);
 
 }
 
-
-
-/* IMAGENES (NO RECORTAR) */
-
 .card img{
 
 width:100%;
@@ -221,10 +188,6 @@ height:380px;
 object-fit:cover;
 
 }
-
-
-
-/* TEXTO TARJETAS */
 
 .card h3{
 
@@ -252,10 +215,6 @@ padding-bottom:14px;
 
 }
 
-
-
-/* GRID DATA */
-
 .data{
 
 display:grid;
@@ -267,10 +226,6 @@ gap:35px;
 margin-top:20px;
 
 }
-
-
-
-/* ACTORES */
 
 .actor{
 
@@ -324,9 +279,6 @@ font-size:14px;
 
 }
 
-
-
-/* SECCION INFORMACION */
 
 .info-banner{
 
@@ -399,10 +351,6 @@ color:#c4cad4;
 margin-bottom:8px;
 
 }
-
-
-
-/* RESPONSIVE */
 
 @media(max-width:900px){
 
