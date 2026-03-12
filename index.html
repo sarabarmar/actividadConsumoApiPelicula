@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Game of Thrones Explorer</title>
+<link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Game of Thrones Explorer</h1>
+<p>Explora información de la serie usando TMDB API</p>
+</header>
+
+<section class="search">
+
+<input type="text" id="serieInput" placeholder="Buscar serie...">
+<button onclick="buscarSerie()">Buscar</button>
+
+</section>
+
+<section id="resultados" class="results"></section>
+
+<section class="menu">
+
+<button onclick="infoSerie()">Información</button>
+<button onclick="actores()">Actores</button>
+<button onclick="temporadas()">Temporadas</button>
+<button onclick="recomendaciones()">Recomendaciones</button>
+
+</section>
+
+<section id="datos" class="data"></section>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
