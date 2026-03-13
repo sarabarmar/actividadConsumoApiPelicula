@@ -1,0 +1,66 @@
+PROYECTO: Explorador de Series usando API TMDB
+
+Este proyecto es una aplicación web desarrollada con HTML, CSS y JavaScript que permite explorar información de series utilizando la API de The Movie Database (TMDB).
+
+La aplicación permite buscar una serie y consultar diferentes tipos de información utilizando varios endpoints de la API.
+
+ENDPOINTS UTILIZADOS
+
+1. Buscar series
+Endpoint:
+https://api.themoviedb.org/3/search/tv
+
+Descripción:
+Permite buscar series de televisión por nombre y devuelve una lista de resultados con información básica como nombre, fecha de estreno y poster.
+
+2. Información de serie
+Endpoint:
+https://api.themoviedb.org/3/tv/{id}
+
+Descripción:
+Devuelve información completa de una serie como sinopsis, rating, número de temporadas y número de episodios.
+
+3. Actores
+Endpoint:
+https://api.themoviedb.org/3/tv/{id}/credits
+
+Descripción:
+Devuelve el elenco principal de la serie incluyendo nombre del actor, personaje e imagen.
+
+4. Temporadas
+Endpoint:
+https://api.themoviedb.org/3/tv/{id}
+
+Descripción:
+Permite obtener la lista de temporadas de la serie con el número de episodios de cada una.
+
+5. Galería de imágenes
+Endpoint:
+https://api.themoviedb.org/3/tv/{id}/images
+
+Descripción:
+Devuelve imágenes de fondo relacionadas con la serie.
+
+6. Géneros
+Endpoint:
+https://api.themoviedb.org/3/genre/tv/list
+
+Descripción:
+Devuelve la lista de géneros disponibles para series de televisión.
+
+7. Recomendaciones
+Endpoint:
+https://api.themoviedb.org/3/tv/{id}/recommendations
+
+Descripción:
+Devuelve recomendaciones de series similares a la seleccionada.
+
+TECNOLOGÍAS UTILIZADAS
+
+HTML
+CSS
+JavaScript
+API REST TMDB
+
+AUTOR
+Sara Barrera

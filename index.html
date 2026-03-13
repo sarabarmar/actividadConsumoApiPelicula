@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Game of Thrones Explorer</title>
-<link rel="stylesheet" href="styles/style.css">
+    <meta charset="UTF-8">
+    <title>Game of Thrones</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
+    <!-- encabezado principal -->
+    <header>
+        <h1>Game Of Thrones</h1>
+        <p>Explora informacion de tus series</p>
+    </header>
 
-<header>
-<h1>Game of Thrones Explorer</h1>
-<p>Explora información de la serie usando TMDB API</p>
-</header>
+    <!-- buscador de series -->
+    <section class="search">
+        <input type="text" id="serieInput" placeholder="buscar serie...">
+        <button onclick="buscarSerie()">buscar</button>
+    </section>
 
-<section class="search">
+    <!-- aqui aparecen los resultados de busqueda -->
+    <section id="resultados" class="results"></section>
 
-<input type="text" id="serieInput" placeholder="Buscar serie...">
-<button onclick="buscarSerie()">Buscar</button>
+    <!-- menu para consultar diferentes endpoints -->
+    <section class="menu">
+        <button onclick="infoSerie()">informacion</button>
+        <button onclick="actores()">actores</button>
+        <button onclick="temporadas()">temporadas</button>
+        <button onclick="imagenes()">galeria</button>
+        <button onclick="generos()">generos</button>
+        <button onclick="recomendaciones()">recomendaciones</button>
+    </section>
 
-</section>
-
-<section id="resultados" class="results"></section>
-
-<section class="menu">
-
-<button onclick="infoSerie()">Información</button>
-<button onclick="actores()">Actores</button>
-<button onclick="temporadas()">Temporadas</button>
-<button onclick="recomendaciones()">Recomendaciones</button>
-
-</section>
-
-<section id="datos" class="data"></section>
-
-<script src="js/app.js"></script>
-
+    <!-- aqui se cargan los datos de la api -->
+    <section id="datos" class="data"></section>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
