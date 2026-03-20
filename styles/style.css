@@ -1,19 +1,19 @@
-/* reset */
+/* reset basico */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:arial, helvetica, sans-serif;
 }
 
-/* fondo general */
+/* estilos generales del body */
 body{
 background:linear-gradient(180deg,#0b0b0b,#141414);
 color:white;
 min-height:100vh;
 }
 
-/* encabezado */
+/* header principal */
 header{
 text-align:center;
 padding:40px 20px;
@@ -21,192 +21,298 @@ background:linear-gradient(90deg,#000,#1c1c1c);
 border-bottom:2px solid #c9a227;
 }
 
+/* titulo del header */
 header h1{
-font-size:48px;
+font-size:40px;
 color:#c9a227;
-letter-spacing:4px;
 }
 
+/* subtitulo del header */
 header p{
-margin-top:10px;
 color:#ccc;
 }
 
-/* buscador */
+/* contenedor del buscador */
 .search{
 display:flex;
 justify-content:center;
 gap:10px;
-margin:40px;
+margin:30px;
 }
 
+/* input del buscador */
 .search input{
 padding:12px;
 width:260px;
 border:none;
 border-radius:6px;
-outline:none;
-font-size:16px;
 }
 
+/* boton del buscador */
 .search button{
-padding:12px 25px;
+padding:12px 20px;
 background:#c9a227;
 border:none;
 border-radius:6px;
-font-weight:bold;
 cursor:pointer;
-transition:0.3s;
 }
 
-.search button:hover{
-background:#f1c232;
-transform:scale(1.05);
-}
-
-/* menu endpoints */
-.menu{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:12px;
-margin-bottom:30px;
-}
-
-.menu button{
-background:#1f1f1f;
-border:none;
-color:white;
-padding:10px 20px;
-border-radius:6px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.menu button:hover{
-background:#c9a227;
-color:black;
-transform:scale(1.05);
-}
-
-/* grid resultados */
+/* contenedores tipo grid */
 .results,
 .data{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:30px;
+gap:20px;
+padding:20px;
 max-width:1200px;
 margin:auto;
 }
 
-/* tarjetas */
+/* tarjetas generales */
 .card{
 background:#1c1c1c;
 border-radius:10px;
 overflow:hidden;
 cursor:pointer;
-transition:0.4s;
-box-shadow:0 10px 25px rgba(0,0,0,0.6);
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 20px 40px rgba(0,0,0,0.8);
-}
-
-/* imagen tarjeta */
-.card img{
-width:100%;
-height:320px;
-object-fit:cover;
-}
-
-/* texto tarjeta */
-.card h3{
-padding:10px;
-font-size:18px;
-}
-
-.card p{
-padding:0 10px 10px 10px;
-font-size:14px;
-color:#bbb;
-}
-
-/* actores */
-.actor{
-background:#1c1c1c;
-border-radius:10px;
-text-align:center;
-padding:15px;
 transition:0.3s;
 }
 
-.actor:hover{
+/* efecto hover de tarjeta */
+.card:hover{
 transform:scale(1.05);
 }
 
+/* imagen de tarjeta */
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+/* titulo de tarjeta */
+.card h3{
+padding:10px;
+}
+
+/* texto de tarjeta */
+.card p{
+padding:0 10px 10px;
+color:#bbb;
+}
+
+/* tarjeta de actores */
+.actor{
+background:#1c1c1c;
+padding:10px;
+border-radius:10px;
+text-align:center;
+}
+
+/* imagen de actor */
 .actor img{
 width:100%;
-height:280px;
+height:250px;
 object-fit:cover;
 border-radius:8px;
-margin-bottom:10px;
 }
 
-/* banner info */
+/* banner principal de informacion */
 .info-banner{
-background-size:cover;
-background-position:center;
-border-radius:12px;
-overflow:hidden;
 grid-column:1/-1;
+background-size:cover;
+border-radius:10px;
 }
 
+/* capa oscura sobre el banner */
 .info-overlay{
 background:rgba(0,0,0,0.8);
-padding:30px;
+padding:20px;
 }
 
+/* contenedor interno de info */
 .info-container{
 display:flex;
-gap:30px;
+gap:20px;
 flex-wrap:wrap;
-align-items:center;
 }
 
+/* imagen del poster */
 .info-poster{
-width:220px;
+width:200px;
 border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.7);
 }
 
-.info-text{
-max-width:600px;
-}
-
+/* titulo dentro de info */
 .info-text h2{
 color:#c9a227;
+}
+
+/* titulos dentro de secciones */
+.data h2{
+grid-column:1/-1;
 margin-bottom:10px;
+color:#c9a227;
+}
+
+/* menu de botones */
+.menu{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+margin:30px 0;
+}
+
+/* botones del menu */
+.menu button{
+background:#1f1f1f;
+border:none;
+color:white;
+padding:12px 25px;
+border-radius:8px;
+cursor:pointer;
+font-size:14px;
+font-weight:bold;
+letter-spacing:1px;
+transition:all 0.3s ease;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* efecto hover en botones */
+.menu button:hover{
+background:#c9a227;
+color:black;
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.8);
+}
+
+/* efecto al hacer click */
+.menu button:active{
+transform:scale(0.95);
+}
+
+/* boton activo */
+.menu button.activo{
+background:#c9a227;
+color:black;
+box-shadow:0 0 15px #c9a227;
+}
+
+@media (max-width:920px){
+
+/* header */
+header h1{
 font-size:32px;
 }
 
-.info-text p{
-margin-bottom:8px;
-line-height:1.5;
+/* buscador */
+.search{
+flex-direction:column;
+align-items:center;
 }
 
-/* scroll bonito */
-::-webkit-scrollbar{
-width:8px;
+.search input{
+width:80%;
 }
 
-::-webkit-scrollbar-track{
-background:#111;
+/* info */
+.info-container{
+flex-direction:column;
+align-items:center;
+text-align:center;
 }
 
-::-webkit-scrollbar-thumb{
-background:#c9a227;
-border-radius:10px;
+.info-poster{
+width:180px;
+}
+
+}
+@media (max-width:768px){
+
+/* grids */
+.results,
+.data{
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+padding:15px;
+}
+
+/* tarjetas */
+.card img{
+height:250px;
+}
+
+/* actores */
+.actor img{
+height:220px;
+}
+
+/* menu */
+.menu{
+gap:8px;
+padding:0 10px;
+}
+
+.menu button{
+padding:10px 15px;
+font-size:13px;
+}
+
+}
+
+
+@media (max-width:480px){
+
+/* header */
+header{
+padding:25px 10px;
+}
+
+header h1{
+font-size:24px;
+}
+
+/* buscador */
+.search{
+margin:20px 10px;
+}
+
+.search input{
+width:100%;
+}
+
+.search button{
+width:100%;
+}
+
+/* grids en una sola columna */
+.results,
+.data{
+grid-template-columns:1fr;
+}
+
+/* tarjetas */
+.card img{
+height:220px;
+}
+
+/* actores */
+.actor img{
+height:200px;
+}
+
+/* info */
+.info-poster{
+width:150px;
+}
+
+/* menu en columna */
+.menu{
+flex-direction:column;
+align-items:center;
+}
+
+.menu button{
+width:90%;
+}
+
 }

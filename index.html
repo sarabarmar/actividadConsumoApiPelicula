@@ -3,39 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Game of Thrones</title>
+    <title>explorador de series</title>
+
+    <!-- enlace al css -->
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
-    <!-- encabezado principal -->
-    <header>
-        <h1>Game Of Thrones</h1>
-        <p>Explora informacion de tus series</p>
-    </header>
 
-    <!-- buscador de series -->
-    <section class="search">
+<!-- encabezado principal -->
+<header>
+    <h1>explorador de series</h1>
+    <p>busca y explora información</p>
+</header>
+
+<!-- seccion del buscador -->
+<section class="search">
+    <!-- formulario que llama a la funcion buscarSerie -->
+    <form onsubmit="buscarSerie(event)">
         <input type="text" id="serieInput" placeholder="buscar serie...">
-        <button onclick="buscarSerie()">buscar</button>
-    </section>
+        <button type="submit">buscar</button>
+    </form>
+</section>
 
-    <!-- aqui aparecen los resultados de busqueda -->
-    <section id="resultados" class="results"></section>
+<!-- contenedor donde aparecen los resultados -->
+<section id="resultados" class="results"></section>
 
-    <!-- menu para consultar diferentes endpoints -->
-    <section class="menu">
-        <button onclick="infoSerie()">informacion</button>
-        <button onclick="actores()">actores</button>
-        <button onclick="temporadas()">temporadas</button>
-        <button onclick="imagenes()">galeria</button>
-        <button onclick="generos()">generos</button>
-        <button onclick="recomendaciones()">recomendaciones</button>
-    </section>
+<!-- menu de opciones de la serie -->
+<section class="menu">
+    <button onclick="infoSerie()">información</button>
+    <button onclick="actores()">actores</button>
+    <button onclick="temporadas()">temporadas</button>
+    <button onclick="imagenes()">galería</button>
+</section>
 
-    <!-- aqui se cargan los datos de la api -->
-    <section id="datos" class="data"></section>
-    <script src="js/app.js"></script>
+<!-- contenedor donde se muestra la informacion -->
+<section id="datos" class="data"></section>
+
+<!-- script principal -->
+<script src="js/app.js"></script>
+
 </body>
-
 </html>
