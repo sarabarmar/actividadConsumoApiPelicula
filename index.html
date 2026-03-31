@@ -1,48 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <title>explorador de series</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#000000">
-    <!-- enlace al css -->
-    <link rel="stylesheet" href="styles/style.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Explora temporadas, episodios y personajes de Game of Thrones">
+  <title>Game of Thrones</title>
 
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+  <!-- iOS PWA support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="GoT">
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+</head>
 <body>
 
-<!-- encabezado principal -->
-<header>
-    <h1>explorador de series</h1>
-    <p>busca y explora información</p>
+<!-- navbar -->
+<header class="navbar" id="navbar">
+  <div class="navbar-logo">
+    <span class="logo-sigil">⚔</span>
+    <h1>Game of Thrones</h1>
+  </div>
+  <nav class="navbar-nav">
+    <a href="#temporadas">Temporadas</a>
+    <a href="#episodios">Episodios</a>
+    <a href="#actores">Personajes</a>
+  </nav>
 </header>
 
-<!-- seccion del buscador -->
-<section class="search">
-    <!-- formulario que llama a la funcion buscarSerie -->
-    <form onsubmit="buscarSerie(event)">
-        <input type="text" id="serieInput" placeholder="buscar serie...">
-        <button type="submit">buscar</button>
-    </form>
+<!-- hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content">
+    <p class="hero-tagline">HBO · 2011–2019</p>
+    <h2 class="hero-title">GAME OF<br><span>THRONES</span></h2>
+    <p class="hero-sub">Winter is coming. Explore seasons, episodes and characters.</p>
+
+    <div class="buscador">
+      <input id="inputBusqueda" type="text" placeholder="Buscar personaje...">
+      <button id="btnBuscar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="resultadosBusqueda" class="resultados-hero"></div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
 </section>
 
-<!-- contenedor donde aparecen los resultados -->
-<section id="resultados" class="results"></section>
+<!-- offline banner -->
+<div id="offlineBanner" class="offline-banner hidden">
+  ⚠ Sin conexión — mostrando datos en caché
+</div>
 
-<!-- menu de opciones de la serie -->
-<section class="menu">
-    <button onclick="infoSerie()">información</button>
-    <button onclick="actores()">actores</button>
-    <button onclick="temporadas()">temporadas</button>
-    <button onclick="imagenes()">galería</button>
+<!-- temporadas -->
+<section class="seccion" id="temporadas">
+  <div class="seccion-header">
+    <h2>Temporadas</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div id="contenedorTemporadas" class="movies"></div>
 </section>
 
-<!-- contenedor donde se muestra la informacion -->
-<section id="datos" class="data"></section>
+<!-- info temporada -->
+<div id="infoTemporada" class="info-temporada hidden"></div>
 
-<!-- script principal -->
+<!-- episodios -->
+<section class="seccion" id="episodios">
+  <div class="seccion-header">
+    <h2>Episodios</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div id="contenedorEpisodios" class="movies"></div>
+</section>
+
+<!-- actores -->
+<section class="seccion" id="actores">
+  <div class="seccion-header">
+    <h2>Personajes</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div id="contenedorActores" class="movies"></div>
+</section>
+
+<!-- modal episodio -->
+<div id="modal" class="modal hidden">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- footer -->
+<footer>
+  <p>⚔ Game of Thrones Fan App · Datos: TVmaze API</p>
+</footer>
+
 <script src="js/app.js"></script>
-
 </body>
 </html>

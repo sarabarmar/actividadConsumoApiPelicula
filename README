@@ -1,66 +1,54 @@
-PROYECTO: Explorador de Series usando API TMDB
+# Game of Thrones PWA
 
-Este proyecto es una aplicación web desarrollada con HTML, CSS y JavaScript que permite explorar información de series utilizando la API de The Movie Database (TMDB).
+## Estructura del proyecto
 
-La aplicación permite buscar una serie y consultar diferentes tipos de información utilizando varios endpoints de la API.
+```
+got-pwa/
+├── index.html
+├── manifest.json       ← PWA manifest
+├── sw.js               ← Service Worker
+├── styles/
+│   └── style.css
+├── js/
+│   └── app.js
+└── icons/
+    ├── icon-192.png    ← Crear íconos para PWA
+    └── icon-512.png
+```
 
-ENDPOINTS UTILIZADOS
+## Cambios principales vs tu versión original
 
-1. Buscar series
-Endpoint:
-https://api.themoviedb.org/3/search/tv
+### API
+- **Antes**: `anapioficeandfire.com` — no tiene datos de GoT de forma útil (solo libros/personajes del lore)
+- **Ahora**: `api.tvmaze.com` (show ID: 82) — tiene temporadas reales, episodios con imágenes, fechas, ratings y cast completo
 
-Descripción:
-Permite buscar series de televisión por nombre y devuelve una lista de resultados con información básica como nombre, fecha de estreno y poster.
+### Endpoints usados
+| Dato | Endpoint |
+|------|----------|
+| Temporadas | `GET /shows/82/seasons` |
+| Episodios de una temporada | `GET /seasons/{id}/episodes` |
+| Cast completo | `GET /shows/82/cast` |
+| Buscar persona | `GET /search/people?q={query}` |
 
-2. Información de serie
-Endpoint:
-https://api.themoviedb.org/3/tv/{id}
+### PWA implementada
+- `manifest.json` — permite instalar la app
+- `sw.js` — Service Worker con:
+  - **Cache First** para estáticos (HTML, CSS, JS, fonts)
+  - **Network First** para la API (con fallback al caché si hay conexión)
+  - **Banner offline** visible cuando se pierde conexión
 
-Descripción:
-Devuelve información completa de una serie como sinopsis, rating, número de temporadas y número de episodios.
+## Para activar la PWA correctamente
+1. Servir desde un servidor HTTPS (o `localhost`)
+2. Crear los íconos en `icons/icon-192.png` y `icons/icon-512.png`
+3. Abrir DevTools → Application → Service Workers para verificar registro
 
-3. Actores
-Endpoint:
-https://api.themoviedb.org/3/tv/{id}/credits
+## Para correr localmente
+```bash
+# Con Python
+python -m http.server 3000
 
-Descripción:
-Devuelve el elenco principal de la serie incluyendo nombre del actor, personaje e imagen.
+# Con Node.js
+npx serve .
+```
 
-4. Temporadas
-Endpoint:
-https://api.themoviedb.org/3/tv/{id}
-
-Descripción:
-Permite obtener la lista de temporadas de la serie con el número de episodios de cada una.
-
-5. Galería de imágenes
-Endpoint:
-https://api.themoviedb.org/3/tv/{id}/images
-
-Descripción:
-Devuelve imágenes de fondo relacionadas con la serie.
-
-6. Géneros
-Endpoint:
-https://api.themoviedb.org/3/genre/tv/list
-
-Descripción:
-Devuelve la lista de géneros disponibles para series de televisión.
-
-7. Recomendaciones
-Endpoint:
-https://api.themoviedb.org/3/tv/{id}/recommendations
-
-Descripción:
-Devuelve recomendaciones de series similares a la seleccionada.
-
-TECNOLOGÍAS UTILIZADAS
-
-HTML
-CSS
-JavaScript
-API REST TMDB
-
-AUTOR
-Sara Barrera
+Luego abre `http://localhost:3000`
