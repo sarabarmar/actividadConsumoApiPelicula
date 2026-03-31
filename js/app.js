@@ -214,3 +214,11 @@ function activarBoton(btn) {
     // agrega la clase al boton clickeado
     btn.classList.add("activo")
 }
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(reg => console.log("Service Worker registrado:", reg))
+      .catch(err => console.log("Error al registrar SW:", err));
+  });
+}

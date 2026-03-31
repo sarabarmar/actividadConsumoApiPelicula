@@ -1,211 +1,244 @@
-/* reset basico */
+/* RESET */
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:arial, helvetica, sans-serif;
+font-family:'Segoe UI',Arial,Helvetica,sans-serif;
 }
 
-/* estilos generales del body */
+/* BODY */
+
 body{
-background:linear-gradient(180deg,#0b0b0b,#141414);
+background:radial-gradient(circle at top,#1a1a1a,#000);
 color:white;
 min-height:100vh;
 }
 
-/* header principal */
+/* HEADER */
+
 header{
 text-align:center;
-padding:40px 20px;
-background:linear-gradient(90deg,#000,#1c1c1c);
-border-bottom:2px solid #c9a227;
+padding:50px 20px;
+background:linear-gradient(90deg,#000,#111,#000);
+border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-/* titulo del header */
 header h1{
-font-size:40px;
-color:#c9a227;
+font-size:42px;
+color:#e6c65c;
+letter-spacing:2px;
+text-shadow:0 0 10px rgba(230,198,92,0.5);
 }
 
-/* subtitulo del header */
 header p{
-color:#ccc;
+color:#bbb;
+margin-top:10px;
 }
 
-/* contenedor del buscador */
+/* BUSCADOR */
+
 .search{
 display:flex;
 justify-content:center;
-gap:10px;
-margin:30px;
+gap:12px;
+margin:35px;
 }
 
-/* input del buscador */
 .search input{
-padding:12px;
-width:260px;
+padding:14px;
+width:280px;
 border:none;
-border-radius:6px;
+border-radius:8px;
+background:#1e1e1e;
+color:white;
+outline:none;
+font-size:14px;
+box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
 }
 
-/* boton del buscador */
 .search button{
-padding:12px 20px;
-background:#c9a227;
+padding:14px 24px;
+background:linear-gradient(45deg,#e6c65c,#c9a227);
 border:none;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
-}
-
-/* contenedores tipo grid */
-.results,
-.data{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:20px;
-max-width:1200px;
-margin:auto;
-}
-
-/* tarjetas generales */
-.card{
-background:#1c1c1c;
-border-radius:10px;
-overflow:hidden;
-cursor:pointer;
+font-weight:bold;
 transition:0.3s;
 }
 
-/* efecto hover de tarjeta */
+.search button:hover{
+transform:scale(1.05);
+box-shadow:0 5px 20px rgba(201,162,39,0.6);
+}
+
+/* GRID */
+
+.results,
+.data{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+padding:30px;
+max-width:1300px;
+margin:auto;
+}
+
+/* TARJETAS */
+
+.card{
+background:#141414;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+transition:0.4s;
+box-shadow:0 10px 30px rgba(0,0,0,0.8);
+position:relative;
+}
+
 .card:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 20px 50px rgba(0,0,0,1);
+}
+
+/* IMAGEN */
+
+.card img{
+width:100%;
+height:320px;
+object-fit:cover;
+transition:0.4s;
+}
+
+.card:hover img{
+transform:scale(1.1);
+}
+
+/* TEXTO TARJETA */
+
+.card h3{
+padding:12px;
+font-size:18px;
+color:#e6c65c;
+}
+
+.card p{
+padding:0 12px 15px;
+color:#ccc;
+font-size:14px;
+}
+
+/* ACTORES */
+
+.actor{
+background:#141414;
+padding:12px;
+border-radius:10px;
+text-align:center;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.7);
+}
+
+.actor:hover{
 transform:scale(1.05);
 }
 
-/* imagen de tarjeta */
-.card img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-/* titulo de tarjeta */
-.card h3{
-padding:10px;
-}
-
-/* texto de tarjeta */
-.card p{
-padding:0 10px 10px;
-color:#bbb;
-}
-
-/* tarjeta de actores */
-.actor{
-background:#1c1c1c;
-padding:10px;
-border-radius:10px;
-text-align:center;
-}
-
-/* imagen de actor */
 .actor img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
 border-radius:8px;
+margin-bottom:10px;
 }
 
-/* banner principal de informacion */
+/* BANNER INFO */
+
 .info-banner{
 grid-column:1/-1;
 background-size:cover;
-border-radius:10px;
+background-position:center;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,0.9);
 }
 
-/* capa oscura sobre el banner */
 .info-overlay{
-background:rgba(0,0,0,0.8);
-padding:20px;
+background:linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.6));
+padding:35px;
 }
 
-/* contenedor interno de info */
 .info-container{
 display:flex;
-gap:20px;
+gap:25px;
 flex-wrap:wrap;
 }
 
-/* imagen del poster */
 .info-poster{
-width:200px;
-border-radius:10px;
+width:220px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.9);
 }
 
-/* titulo dentro de info */
 .info-text h2{
-color:#c9a227;
+color:#e6c65c;
+margin-bottom:10px;
 }
 
-/* titulos dentro de secciones */
+/* TITULOS */
+
 .data h2{
 grid-column:1/-1;
-margin-bottom:10px;
-color:#c9a227;
+margin-bottom:15px;
+color:#e6c65c;
+font-size:24px;
+border-left:4px solid #e6c65c;
+padding-left:10px;
 }
 
-/* menu de botones */
+/* MENU */
+
 .menu{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:12px;
-margin:30px 0;
+gap:15px;
+margin:35px 0;
 }
 
-/* botones del menu */
 .menu button{
-background:#1f1f1f;
+background:#1a1a1a;
 border:none;
 color:white;
-padding:12px 25px;
-border-radius:8px;
+padding:12px 28px;
+border-radius:30px;
 cursor:pointer;
 font-size:14px;
 font-weight:bold;
 letter-spacing:1px;
-transition:all 0.3s ease;
-box-shadow:0 5px 15px rgba(0,0,0,0.5);
+transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.7);
 }
 
-/* efecto hover en botones */
 .menu button:hover{
-background:#c9a227;
+background:linear-gradient(45deg,#e6c65c,#c9a227);
 color:black;
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 10px 25px rgba(0,0,0,0.8);
+transform:translateY(-3px);
 }
 
-/* efecto al hacer click */
-.menu button:active{
-transform:scale(0.95);
-}
-
-/* boton activo */
 .menu button.activo{
 background:#c9a227;
 color:black;
-box-shadow:0 0 15px #c9a227;
+box-shadow:0 0 20px #c9a227;
 }
+
+/* RESPONSIVE */
 
 @media (max-width:920px){
 
-/* header */
 header h1{
 font-size:32px;
 }
 
-/* buscador */
 .search{
 flex-direction:column;
 align-items:center;
@@ -215,7 +248,6 @@ align-items:center;
 width:80%;
 }
 
-/* info */
 .info-container{
 flex-direction:column;
 align-items:center;
@@ -227,42 +259,32 @@ width:180px;
 }
 
 }
+
 @media (max-width:768px){
 
-/* grids */
 .results,
 .data{
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-padding:15px;
+padding:20px;
 }
 
-/* tarjetas */
 .card img{
-height:250px;
+height:260px;
 }
 
-/* actores */
 .actor img{
 height:220px;
 }
 
-/* menu */
-.menu{
-gap:8px;
-padding:0 10px;
-}
-
 .menu button{
-padding:10px 15px;
+padding:10px 18px;
 font-size:13px;
 }
 
 }
 
-
 @media (max-width:480px){
 
-/* header */
 header{
 padding:25px 10px;
 }
@@ -271,41 +293,28 @@ header h1{
 font-size:24px;
 }
 
-/* buscador */
-.search{
-margin:20px 10px;
-}
-
-.search input{
-width:100%;
-}
-
+.search input,
 .search button{
 width:100%;
 }
 
-/* grids en una sola columna */
 .results,
 .data{
 grid-template-columns:1fr;
 }
 
-/* tarjetas */
 .card img{
-height:220px;
+height:230px;
 }
 
-/* actores */
 .actor img{
 height:200px;
 }
 
-/* info */
 .info-poster{
 width:150px;
 }
 
-/* menu en columna */
 .menu{
 flex-direction:column;
 align-items:center;
